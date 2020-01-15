@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>page2.utf8.md</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.9.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MONITOR</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Recenseamento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Fase de Recenseamento</li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Caracteristicas do Posto</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="page1a.html">Localização do Posto</a>
+        </li>
+        <li>
+          <a href="page1b.html">Mulheres nas Brigadas</a>
+        </li>
+        <li>
+          <a href="page1c.html">Variação das Mulheres nas Brigadas</a>
+        </li>
+        <li>
+          <a href="page1d.html">Posto de Recenseamento</a>
+        </li>
+      </ul>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page2.html">Material de Recenseamrnto</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page3.html">Registo dos Eleitore</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page4.html">Reclamações Apresentadas</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page5.html">Cartões do Eleitor</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Campanha
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Campanha.html">Campanha Eleitoral</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Abertura
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C1_Abertura_da_mesa.html">Abertura da Mesa de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Votação
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C2_Votacao-Dia.html">Dia de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Encerramento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C3_Encerramento.html">Encerramento da Mesa de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Apuramento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C4_Apuramento_e_Contagem.html">Apuramento e Contagem dos Votos</a>
+    </li>
+    <li>
+      <a href="C4_Apuramento_Candidatos.html">Mapa com % de apuramento dos Candidatos e Partidos</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Incidentes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="F_Incidentes.html">Incidentes de Violência</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="contact.html">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<div id="material-recebido" class="section level2">
+<h2><strong>Material recebido</strong></h2>
+<div id="material-que-não-funcionava-perfeitamente" class="section level3">
+<h3>Material que não funcionava perfeitamente</h3>
+<div id="htmlwidget-2c163714c03b6eb9d7ed" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2c163714c03b6eb9d7ed">{"x":{"visdat":{"793433521fe":["function () ","plotlyVisDat"]},"cur_data":"793433521fe","attrs":{"793433521fe":{"x":{},"y":{},"name":"Computador/mobile","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"793433521fe.1":{"x":{},"y":{},"name":"Máquina fotografica","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"793433521fe.2":{"x":{},"y":{},"name":"Outro","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"Percentagem","showgrid":false,"ticksuffix":"%"},"barmode":"group","xaxis":{"domain":[0,1],"automargin":true,"title":"","showgrid":false,"categoryarray":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"categoryorder":"array","tickangle":35,"type":"category"},"title":"","font":{"family":"arial","size":11,"color":"black"},"legend":{"orientation":"h","xanchor":"center","x":0.5,"y":-0.25},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[10.4,5.2,19.2,44.6,15.6,32.1,3.2,10.9,6.7,2.5,2.1,1.2,2.9,6,14.6,9.9,17.2,2.9,7.3,2],"name":"Computador/mobile","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[3.8,0.4,1.4,0.8,9.9,3,0.4,0,1.9,0,0,0,0.7,1.1,0,0.3,0.1,0.3,0.4,0.5],"name":"Máquina fotografica","type":"bar","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[8.8,7.4,36.4,18.8,24,34.8,11.9,20,15.6,7.7,1.6,4.5,6.6,7.3,14.6,9.2,34.2,1.8,11,5.1],"name":"Outro","type":"bar","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="tipo-de-problemas-do-material-recebido" class="section level3">
+<h3>Tipo de problemas do material recebido</h3>
+<div id="htmlwidget-3f244bfcd2bb7b539ba6" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3f244bfcd2bb7b539ba6">{"x":{"visdat":{"79342eea15e6":["function () ","plotlyVisDat"]},"cur_data":"79342eea15e6","attrs":{"79342eea15e6":{"x":{},"y":{},"name":"Problemas com Mouse","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"79342eea15e6.1":{"x":{},"y":{},"name":"Sem Boletins","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"79342eea15e6.2":{"x":{},"y":{},"name":"Posto não foi aberto","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"79342eea15e6.3":{"x":{},"y":{},"name":"Sem sistema","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"79342eea15e6.4":{"x":{},"y":{},"name":"Problema com painel solar","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"79342eea15e6.5":{"x":{},"y":{},"name":"Problema com impressora","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"79342eea15e6.6":{"x":{},"y":{},"name":"Falta de cartões","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"79342eea15e6.7":{"x":{},"y":{},"name":"Problemas com bateria","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"79342eea15e6.8":{"x":{},"y":{},"name":"Problemas com corrente eléctrica","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"79342eea15e6.9":{"x":{},"y":{},"name":"Sem material no posto","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"79342eea15e6.10":{"x":{},"y":{},"name":"Problemas com gerador","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"# de eventos reportados","showgrid":false},"barmode":"group","xaxis":{"domain":[0,1],"automargin":true,"title":"","showgrid":false,"categoryarray":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"categoryorder":"array","tickangle":35,"type":"category"},"title":"","font":{"family":"arial","size":11,"color":"black"},"legend":{"x":0.1,"y":-0.3,"orientation":"h"},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[0,1,0,0,0,0,0,0,1,1,1,0,4,1,0,0,0,0,0,0],"name":"Problemas com Mouse","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[0,4,30,1,1,5,0,2,0,11,0,0,0,1,0,1,0,0,0,0],"name":"Sem Boletins","type":"bar","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[2,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0,0,0,0,0],"name":"Posto não foi aberto","type":"bar","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[0,1,2,0,1,2,0,6,1,2,0,1,2,2,1,9,2,0,3,4],"name":"Sem sistema","type":"bar","marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[2,0,11,1,7,11,25,4,1,7,2,5,21,27,28,6,316,0,6,5],"name":"Problema com painel solar","type":"bar","marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[5,7,278,25,36,274,45,69,71,8,0,7,12,14,4,3,13,4,82,55],"name":"Problema com impressora","type":"bar","marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[0,0,108,0,18,30,1,4,0,1,0,0,3,0,0,0,1,1,1,1],"name":"Falta de cartões","type":"bar","marker":{"color":"rgba(227,119,194,1)","line":{"color":"rgba(227,119,194,1)"}},"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[0,0,1,0,0,0,2,0,2,4,0,0,6,0,2,2,7,0,1,0],"name":"Problemas com bateria","type":"bar","marker":{"color":"rgba(127,127,127,1)","line":{"color":"rgba(127,127,127,1)"}},"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[1,1,27,8,15,2,35,17,3,1,0,3,3,24,29,9,224,1,9,0],"name":"Problemas com corrente eléctrica","type":"bar","marker":{"color":"rgba(188,189,34,1)","line":{"color":"rgba(188,189,34,1)"}},"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[0,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0],"name":"Sem material no posto","type":"bar","marker":{"color":"rgba(23,190,207,1)","line":{"color":"rgba(23,190,207,1)"}},"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[1,0,18,1,12,5,18,22,8,0,0,0,3,18,4,1,210,0,0,0],"name":"Problemas com gerador","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+<span style="color:#21618C ">Copyright &copy; 2019 Counterpart International. All Rights Reserved.</span>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

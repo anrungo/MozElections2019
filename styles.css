@@ -1,0 +1,44 @@
+body{ /* Normal  */
+      font-size: 15px;
+  }
+
+h1 {
+  font-size: 32px;
+  color: #117A65;
+}
+h1.title {
+  font-size: 28px;
+  color: #117A65;
+}
+h2 {
+  font-size: 20px;
+  color: #117A65;
+}
+h3 {
+  font-size: 18px;
+  font-style: bold;
+  font-weight: 100;
+  color: #117A65;
+}
+h4 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 18px;
+}
+img {
+    display: block;
+    margin: auto;
+}
+
+img-circle {
+    border-radius: 50%;
+}
+
+img{
+     max-width:350px;
+     max-height:650px;
+}

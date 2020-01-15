@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>page5.utf8.md</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.9.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MONITOR</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Recenseamento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Fase de Recenseamento</li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Caracteristicas do Posto</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="page1a.html">Localização do Posto</a>
+        </li>
+        <li>
+          <a href="page1b.html">Mulheres nas Brigadas</a>
+        </li>
+        <li>
+          <a href="page1c.html">Variação das Mulheres nas Brigadas</a>
+        </li>
+        <li>
+          <a href="page1d.html">Posto de Recenseamento</a>
+        </li>
+      </ul>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page2.html">Material de Recenseamrnto</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page3.html">Registo dos Eleitore</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page4.html">Reclamações Apresentadas</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page5.html">Cartões do Eleitor</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Campanha
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Campanha.html">Campanha Eleitoral</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Abertura
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C1_Abertura_da_mesa.html">Abertura da Mesa de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Votação
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C2_Votacao-Dia.html">Dia de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Encerramento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C3_Encerramento.html">Encerramento da Mesa de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Apuramento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C4_Apuramento_e_Contagem.html">Apuramento e Contagem dos Votos</a>
+    </li>
+    <li>
+      <a href="C4_Apuramento_Candidatos.html">Mapa com % de apuramento dos Candidatos e Partidos</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Incidentes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="F_Incidentes.html">Incidentes de Violência</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="contact.html">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<div id="processo-de-atribuição-do-cartão-de-eleitor" class="section level2">
+<h2><strong>Processo de atribuição do Cartão de Eleitor</strong></h2>
+<div id="número-médio-de-pessoas-registadas-por-dia-pela-brigada" class="section level3">
+<h3>Número médio de pessoas registadas por dia pela brigada</h3>
+<div id="htmlwidget-de728c8febc4a726bf0f" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-de728c8febc4a726bf0f">{"x":{"visdat":{"79345f57635d":["function () ","plotlyVisDat"]},"cur_data":"79345f57635d","attrs":{"79345f57635d":{"x":{},"y":{},"color":{},"colors":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"Número médio","showgrid":true},"barmode":"group","xaxis":{"domain":[0,1],"automargin":true,"title":"","showgrid":true,"categoryarray":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"categoryorder":"array","type":"category"},"title":"","font":{"family":"arial","size":11,"color":"black"},"legend":{"categoryarray":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"categoryorder":"array"},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Angoche"],"y":[25],"type":"bar","name":"Angoche","marker":{"color":"rgba(179,77,182,1)","line":{"color":"rgba(179,77,182,1)"}},"textfont":{"color":"rgba(179,77,182,1)"},"error_y":{"color":"rgba(179,77,182,1)"},"error_x":{"color":"rgba(179,77,182,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Beira"],"y":[41],"type":"bar","name":"Beira","marker":{"color":"rgba(144,66,28,1)","line":{"color":"rgba(144,66,28,1)"}},"textfont":{"color":"rgba(144,66,28,1)"},"error_y":{"color":"rgba(144,66,28,1)"},"error_x":{"color":"rgba(144,66,28,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Catandica"],"y":[13],"type":"bar","name":"Catandica","marker":{"color":"rgba(88,72,210,1)","line":{"color":"rgba(88,72,210,1)"}},"textfont":{"color":"rgba(88,72,210,1)"},"error_y":{"color":"rgba(88,72,210,1)"},"error_x":{"color":"rgba(88,72,210,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Chimoio"],"y":[15],"type":"bar","name":"Chimoio","marker":{"color":"rgba(72,61,139,1)","line":{"color":"rgba(72,61,139,1)"}},"textfont":{"color":"rgba(72,61,139,1)"},"error_y":{"color":"rgba(72,61,139,1)"},"error_x":{"color":"rgba(72,61,139,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Chokwe"],"y":[13],"type":"bar","name":"Chokwe","marker":{"color":"rgba(0,141,174,1)","line":{"color":"rgba(0,141,174,1)"}},"textfont":{"color":"rgba(0,141,174,1)"},"error_y":{"color":"rgba(0,141,174,1)"},"error_x":{"color":"rgba(0,141,174,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Gondola"],"y":[14],"type":"bar","name":"Gondola","marker":{"color":"rgba(129,107,220,1)","line":{"color":"rgba(129,107,220,1)"}},"textfont":{"color":"rgba(129,107,220,1)"},"error_y":{"color":"rgba(129,107,220,1)"},"error_x":{"color":"rgba(129,107,220,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Gorongosa"],"y":[18],"type":"bar","name":"Gorongosa","marker":{"color":"rgba(183,81,32,1)","line":{"color":"rgba(183,81,32,1)"}},"textfont":{"color":"rgba(183,81,32,1)"},"error_y":{"color":"rgba(183,81,32,1)"},"error_x":{"color":"rgba(183,81,32,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Gurue"],"y":[23],"type":"bar","name":"Gurue","marker":{"color":"rgba(93,133,95,1)","line":{"color":"rgba(93,133,95,1)"}},"textfont":{"color":"rgba(93,133,95,1)"},"error_y":{"color":"rgba(93,133,95,1)"},"error_x":{"color":"rgba(93,133,95,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Manica"],"y":[15],"type":"bar","name":"Manica","marker":{"color":"rgba(164,142,230,1)","line":{"color":"rgba(164,142,230,1)"}},"textfont":{"color":"rgba(164,142,230,1)"},"error_y":{"color":"rgba(164,142,230,1)"},"error_x":{"color":"rgba(164,142,230,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Maputo Cidade"],"y":[10],"type":"bar","name":"Maputo Cidade","marker":{"color":"rgba(167,189,131,1)","line":{"color":"rgba(167,189,131,1)"}},"textfont":{"color":"rgba(167,189,131,1)"},"error_y":{"color":"rgba(167,189,131,1)"},"error_x":{"color":"rgba(167,189,131,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Marromeu"],"y":[9],"type":"bar","name":"Marromeu","marker":{"color":"rgba(223,97,36,1)","line":{"color":"rgba(223,97,36,1)"}},"textfont":{"color":"rgba(223,97,36,1)"},"error_y":{"color":"rgba(223,97,36,1)"},"error_x":{"color":"rgba(223,97,36,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Matola"],"y":[17],"type":"bar","name":"Matola","marker":{"color":"rgba(88,66,124,1)","line":{"color":"rgba(88,66,124,1)"}},"textfont":{"color":"rgba(88,66,124,1)"},"error_y":{"color":"rgba(88,66,124,1)"},"error_x":{"color":"rgba(88,66,124,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia"],"y":[25],"type":"bar","name":"Mocimboa da Praia","marker":{"color":"rgba(255,0,0,1)","line":{"color":"rgba(255,0,0,1)"}},"textfont":{"color":"rgba(255,0,0,1)"},"error_y":{"color":"rgba(255,0,0,1)"},"error_x":{"color":"rgba(255,0,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocuba"],"y":[24],"type":"bar","name":"Mocuba","marker":{"color":"rgba(0,200,78,1)","line":{"color":"rgba(0,200,78,1)"}},"textfont":{"color":"rgba(0,200,78,1)"},"error_y":{"color":"rgba(0,200,78,1)"},"error_x":{"color":"rgba(0,200,78,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Monapo"],"y":[16],"type":"bar","name":"Monapo","marker":{"color":"rgba(166,110,164,1)","line":{"color":"rgba(166,110,164,1)"}},"textfont":{"color":"rgba(166,110,164,1)"},"error_y":{"color":"rgba(166,110,164,1)"},"error_x":{"color":"rgba(166,110,164,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Montepuez"],"y":[28],"type":"bar","name":"Montepuez","marker":{"color":"rgba(255,82,50,1)","line":{"color":"rgba(255,82,50,1)"}},"textfont":{"color":"rgba(255,82,50,1)"},"error_y":{"color":"rgba(255,82,50,1)"},"error_x":{"color":"rgba(255,82,50,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Nacala Porto"],"y":[25],"type":"bar","name":"Nacala Porto","marker":{"color":"rgba(205,154,199,1)","line":{"color":"rgba(205,154,199,1)"}},"textfont":{"color":"rgba(205,154,199,1)"},"error_y":{"color":"rgba(205,154,199,1)"},"error_x":{"color":"rgba(205,154,199,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Nampula"],"y":[19],"type":"bar","name":"Nampula","marker":{"color":"rgba(189,0,200,1)","line":{"color":"rgba(189,0,200,1)"}},"textfont":{"color":"rgba(189,0,200,1)"},"error_y":{"color":"rgba(189,0,200,1)"},"error_x":{"color":"rgba(189,0,200,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Nhamatanda"],"y":[61],"type":"bar","name":"Nhamatanda","marker":{"color":"rgba(228,148,94,1)","line":{"color":"rgba(228,148,94,1)"}},"textfont":{"color":"rgba(228,148,94,1)"},"error_y":{"color":"rgba(228,148,94,1)"},"error_x":{"color":"rgba(228,148,94,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Quelimane"],"y":[44],"type":"bar","name":"Quelimane","marker":{"color":"rgba(0,100,0,1)","line":{"color":"rgba(0,100,0,1)"}},"textfont":{"color":"rgba(0,100,0,1)"},"error_y":{"color":"rgba(0,100,0,1)"},"error_x":{"color":"rgba(0,100,0,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="cartão-do-eleitor-atribuido-depois-de-recensear" class="section level3">
+<h3>Cartão do eleitor atribuido depois de recensear</h3>
+<div id="htmlwidget-7411c118c5c13c90e405" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7411c118c5c13c90e405">{"x":{"visdat":{"7934134b75fa":["function () ","plotlyVisDat"]},"cur_data":"7934134b75fa","attrs":{"7934134b75fa":{"x":{},"y":{},"marker":{"color":"green"},"name":"As pessoas recebiam o seu cartão de eleitor","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"7934134b75fa.1":{"x":{},"y":{},"marker":{"color":"red"},"name":"As pessoas não recebiam o seu cartão de eleitor","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"Percentagem","showgrid":false,"ticksuffix":"%"},"barmode":"group","xaxis":{"domain":[0,1],"automargin":true,"title":"","showgrid":false,"categoryarray":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"categoryorder":"array","tickangle":35,"type":"category"},"title":"","legend":{"x":0.1,"y":-0.45},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[88.3,89.7,40.2,44.2,86.7,46.6,92.4,69.9,90.3,95.3,97.9,96.1,96.2,95.6,76.3,88.7,75,98.4,97.7,98.2],"marker":{"color":"green","line":{"color":"rgba(31,119,180,1)"}},"name":"As pessoas recebiam o seu cartão de eleitor","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[11.7,10.3,59.8,55.8,13.3,53.4,7.6,30.1,9.7,4.7,2.1,3.9,3.8,4.4,23.7,11.3,25,1.6,2.3,1.8],"marker":{"color":"red","line":{"color":"rgba(255,127,14,1)"}},"name":"As pessoas não recebiam o seu cartão de eleitor","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="razões-para-não-receberem-o-seu-cartão-de-eleitor" class="section level3">
+<h3>Razões para não receberem o seu cartão de eleitor</h3>
+<div id="htmlwidget-83b2394faff2f426482d" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-83b2394faff2f426482d">{"x":{"visdat":{"793448b1d55":["function () ","plotlyVisDat"]},"cur_data":"793448b1d55","attrs":{"793448b1d55":{"x":{},"y":{},"name":"Problemas com o mobile","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"793448b1d55.1":{"x":{},"y":{},"name":"Problemas com a impressora","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"793448b1d55.2":{"x":{},"y":{},"name":"Falta de cartões/Boletins","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"793448b1d55.3":{"x":{},"y":{},"name":"Falta de corrente eléctrica","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"793448b1d55.4":{"x":{},"y":{},"name":"Posto não estar a funcionar","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"# de eventos reportados","showgrid":false},"barmode":"group","xaxis":{"domain":[0,1],"automargin":true,"title":"","showgrid":false,"categoryarray":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"categoryorder":"array","tickangle":35,"type":"category"},"title":"","font":{"family":"arial","size":11,"color":"black"},"legend":{"x":0.2,"y":-0.4,"orientation":"h","font":{"family":"arial","size":11,"color":"black"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[0,6,242,86,8,202,16,43,16,6,2,3,11,19,38,20,40,2,5,6],"name":"Problemas com o mobile","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[3,8,254,32,17,168,16,65,37,12,0,4,6,10,5,4,16,2,37,18],"name":"Problemas com a impressora","type":"bar","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[2,6,219,1,3,69,3,11,2,9,0,0,0,2,0,2,4,1,1,2],"name":"Falta de cartões/Boletins","type":"bar","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[0,2,43,15,6,15,27,17,10,3,3,4,7,19,22,11,66,0,6,6],"name":"Falta de corrente eléctrica","type":"bar","marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Mocimboa da Praia","Montepuez","Nampula","Angoche","Monapo","Nacala Porto","Quelimane","Gurue","Mocuba","Chimoio","Catandica","Gondola","Manica","Beira","Gorongosa","Marromeu","Nhamatanda","Chokwe","Matola","Maputo Cidade"],"y":[15,3,11,2,1,11,3,14,3,1,0,2,1,0,15,0,28,0,1,0],"name":"Posto não estar a funcionar","type":"bar","marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+<span style="color:#21618C ">Copyright &copy; 2019 Counterpart International. All Rights Reserved.</span>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>index.utf8.md</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MONITOR</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Recenseamento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Fase de Recenseamento</li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Caracteristicas do Posto</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="page1a.html">Localização do Posto</a>
+        </li>
+        <li>
+          <a href="page1b.html">Mulheres nas Brigadas</a>
+        </li>
+        <li>
+          <a href="page1c.html">Variação das Mulheres nas Brigadas</a>
+        </li>
+        <li>
+          <a href="page1d.html">Posto de Recenseamento</a>
+        </li>
+      </ul>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page2.html">Material de Recenseamrnto</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page3.html">Registo dos Eleitore</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page4.html">Reclamações Apresentadas</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page5.html">Cartões do Eleitor</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Campanha
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Campanha.html">Campanha Eleitoral</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Abertura
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C1_Abertura_da_mesa.html">Abertura da Mesa de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Votação
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C2_Votacao-Dia.html">Dia de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Encerramento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C3_Encerramento.html">Encerramento da Mesa de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Apuramento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C4_Apuramento_e_Contagem.html">Apuramento e Contagem dos Votos</a>
+    </li>
+    <li>
+      <a href="C4_Apuramento_Candidatos.html">Mapa com % de apuramento dos Candidatos e Partidos</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Incidentes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="F_Incidentes.html">Incidentes de Violência</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="contact.html">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<style>
+body {
+text-align: justify}
+</style>
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<p><img src="images/logo_all_v2.jpg" style="width:50%; align=middle; border:8px solid; margin-right: 20px" align="left"></p>
+<div id="contextualização" class="section level2">
+<h2>Contextualização</h2>
+<p>MONITOR – uma plataforma de Justiça, Paz e Democracia, é uma plataforma de monitoria eleitoral que visa identificar, documentar, reportar e disseminar os incidentes eleitorais analisados como aspectos que podem comprometer a credibilidade do processo eleitoral em Moçambique. A plataforma opera em 20 distritos das províncias de Maputo, Gaza, Sofala, Manica, Zambézia, Nampula e Cabo Delgado. A plataforma é composta por 05 organizações da Sociedade Civil, nomeadamente, Pressão Nacional dos Direitos Humanos (PNDH), Centro de Aprendizagem e Capacitação da Sociedade Civil (CESC), Comité Ecuménico para o Desenvolvimento Social (CEDES), Associação Nacional para o Desenvolvimento Auto-sustentado (ANDA) e Centro para a Democracia e Desenvolvimento (CDD), ambos com o financiamento da USAID através da Counterpart International.</p>
+<p>A Plataforma Monitor tem vindo a monitorar as principais etapas do processo eleitoral, nomeadamente o (i) recenseamento, inscrição dos candidatos, (ii) campanha eleitoral, (ii) votação, (iii) apuramento, contagem e publicação dos resultados e (iv) o ambiente em que se vive em cada uma destas fazes. Estão envolvidos no processo de observação e gestão de conflitos eleitoral monitores, membros dos Comités de Resposta e Reconciliação, Comité Nacional de Resposta e Reconciliação, especialistas de ciências sociais e política, estatística, segurança, líderes religiosos e tradicionais.</p>
+<p>O processo das eleições em Moçambique tem sido marcado por um ambiente de ocorrências de conflitos pois eleitoral derivado a não aceitação dos resultados, sobre tudo pelos partidos políticos da oposição. As opiniões fundamentam que as eleições não têm sido livres, justas e transparentes como resultado de fraudes e manipulação do processo de forma deliberada.</p>
+</div>
+<div id="metodologia" class="section level2">
+<h2>Metodologia</h2>
+<p>ELMO é uma plataforma web de recolha, processamento de dados e produção de relatórios para análise de monitoria dos processos eleitorais, em tempo real. A informação é enviada à plataforma por observadores (monitores) no campo utilizando o aplicativo Open Data Kit (ODK), SMS ou ficha online. O ELMO é de código aberto e pode ser adaptado para vários fins do campo de pesquisa. E o SMS Connect é um canal de comunicação para recepção de mensagens categorizadas por gravidade e tipo de incidente, enviadas pelos Monitores em tempo real. Estas mensagens são agrupadas automaticamente e incluídas no relatório diário como alertas para seguimento imediato pelos CRR.</p>
+<p>A Plataforma Monitor esteve presente através de seus parceiros nas 7 províncias e 20 distritos com monitores, CRRs e staff a observar o processo eleitoral desde o recenseamento até a validação dos resultados pelo Conselho Constitucional. Para a recolha de dados foram empregues monitores/ observadores eleitorais que em tempo real reportaram todas as incidências eleitorais através do ELMO que continha questionários pré-elaborados e SMS Connect que foi usado durante a campanha e votação como alternativa ao ELMO focado para a violência eleitoral. Por sua vez, os dados eram enviados ao secretariado para o processamento pelos gestores de dados. Toda a informação referente a violência, ilícitos eleitorais, fraude ou manipulação era devolvida aos membros dos CRRs para respectiva intervenção junto das entidades interessadas e competentes. Só a plataforma Monitor, processou 12768 fichas durante o recenseamento, 10681 na campanha eleitoral, 208 na abertura da mesa de votação, 1707 no dia da votação e apuramento e 59 de incidentes.</p>
+</div>
+
+<span style="color:#21618C ">Copyright &copy; 2019 Counterpart International. All Rights Reserved.</span>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

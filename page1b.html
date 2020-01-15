@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>page1b.utf8.md</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<link href="site_libs/minichart-0.2.2/minicharts.css" rel="stylesheet" />
+<script src="site_libs/minichart-0.2.2/leaflet.minicharts.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MONITOR</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Recenseamento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Fase de Recenseamento</li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Caracteristicas do Posto</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="page1a.html">Localização do Posto</a>
+        </li>
+        <li>
+          <a href="page1b.html">Mulheres nas Brigadas</a>
+        </li>
+        <li>
+          <a href="page1c.html">Variação das Mulheres nas Brigadas</a>
+        </li>
+        <li>
+          <a href="page1d.html">Posto de Recenseamento</a>
+        </li>
+      </ul>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page2.html">Material de Recenseamrnto</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page3.html">Registo dos Eleitore</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page4.html">Reclamações Apresentadas</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="page5.html">Cartões do Eleitor</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Campanha
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Campanha.html">Campanha Eleitoral</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Abertura
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C1_Abertura_da_mesa.html">Abertura da Mesa de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Votação
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C2_Votacao-Dia.html">Dia de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Encerramento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C3_Encerramento.html">Encerramento da Mesa de Votação</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Apuramento
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="C4_Apuramento_e_Contagem.html">Apuramento e Contagem dos Votos</a>
+    </li>
+    <li>
+      <a href="C4_Apuramento_Candidatos.html">Mapa com % de apuramento dos Candidatos e Partidos</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Incidentes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="F_Incidentes.html">Incidentes de Violência</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="contact.html">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<div id="mulheres-nas-brigadas" class="section level2">
+<h2><strong>Mulheres nas Brigadas</strong></h2>
+<div id="presença-de-mulheres-nas-brigadas-de-recenseamento" class="section level3">
+<h3>Presença de mulheres nas brigadas de recenseamento</h3>
+<div id="htmlwidget-ed116b798d68bef00f17" style="width:100%;height:400px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ed116b798d68bef00f17">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addProviderTiles","args":["OpenStreetMap.Mapnik",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMinicharts","args":[[{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (32.45889,-25.96222)","lat":-25.96222,"lng":32.45889},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (32.58322,-25.972)","lat":-25.972,"lng":32.58322},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (32.87562,-18.936094)","lat":-18.936094,"lng":32.87562},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (32.98333,-24.53333)","lat":-24.53333,"lng":32.98333},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (33.173958,-18.057169)","lat":-18.057169,"lng":33.173958},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (33.48333,-19.11639)","lat":-19.11639,"lng":33.48333},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (33.64619,-19.08684)","lat":-19.08684,"lng":33.64619},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (34.06977,-18.68532)","lat":-18.68532,"lng":34.06977},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (34.20811,-19.270105)","lat":-19.270105,"lng":34.20811},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (34.83889,-19.84361)","lat":-19.84361,"lng":34.83889},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (35.938618,-18.290625)","lat":-18.290625,"lng":35.938618},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (36.88833,-17.87861)","lat":-17.87861,"lng":36.88833},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (36.983612,-15.462386)","lat":-15.462386,"lng":36.983612},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (36.98559,-16.839096)","lat":-16.839096,"lng":36.98559},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (38.9981,-13.134)","lat":-13.134,"lng":38.9981},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (39.2666,-15.11646)","lat":-15.11646,"lng":39.2666},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (39.90861,-16.2325)","lat":-16.2325,"lng":39.90861},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (40.298595,-14.915417)","lat":-14.915417,"lng":40.298595},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (40.3522,-11.3536)","lat":-11.3536,"lng":40.3522},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":30,"height":30,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"brown","layerId":"_minichart (40.68538,-14.56257)","lat":-14.56257,"lng":40.68538},"timeSteps":1}],[[[80,0]],[[253,4]],[[21,7]],[[26,1]],[[4,0]],[[30,1]],[[7,0]],[[4,1]],[[63,3]],[[20,5]],[[25,1]],[[17,1]],[[15,1]],[[28,5]],[[13,0]],[[65,9]],[[7,0]],[[12,2]],[[2,0]],[[33,3]]],253,["#D35400","#3498DB"],["1"],null,{"showTitle":true,"showValues":true,"labels":["Mulheres","Homens"],"supValues":null,"supLabels":[],"html":[["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Matola<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>80<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>0<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Maputo Cidade<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>253<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>4<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Manica<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>21<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>7<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Chokwe<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>26<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>1<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Catandica<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>4<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>0<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Chimoio<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>30<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>1<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Gondola<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>7<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>0<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Gorongosa<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>4<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>1<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Nhamatanda<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>63<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>3<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Beira<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>20<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>5<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Marromeu<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>25<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>1<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Quelimane<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>17<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>1<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Gurue<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>15<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>1<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Mocuba<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>28<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>5<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Montepuez<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>13<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>0<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Nampula<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>65<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>9<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Angoche<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>7<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>0<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Monapo<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>12<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>2<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Mocimboa da Praia<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>2<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>0<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Nacala Porto<\/h3><b><span style='color: #D35400'>Mulheres: <\/span><\/b>33<br><b><span style='color: #3498DB'>Homens: <\/span><\/b>3<\/div>"]],"noPopup":false,"digits":null},null]},{"method":"addLegend","args":[{"colors":["#D35400","#3498DB"],"labels":["Mulheres","Homens"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"unknown","title":null,"extra":null,"layerId":"minichartsLegend","className":"info legend","group":null}]}],"limits":{"lat":[-25.972,-11.3536],"lng":[32.45889,40.68538]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="distribuição-do-global-número-de-mulheres-nas-brigadas-por-cada-distrito" class="section level3">
+<h3>Distribuição do global número de mulheres nas brigadas por cada distrito</h3>
+<div id="htmlwidget-ca2f07dd33e1f603b3ef" style="width:100%;height:400px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ca2f07dd33e1f603b3ef">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addProviderTiles","args":["OpenStreetMap.Mapnik",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMinicharts","args":[[{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (32.45889,-25.96222)","lat":-25.96222,"lng":32.45889},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (32.58322,-25.972)","lat":-25.972,"lng":32.58322},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (32.87562,-18.936094)","lat":-18.936094,"lng":32.87562},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (32.98333,-24.53333)","lat":-24.53333,"lng":32.98333},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (33.173958,-18.057169)","lat":-18.057169,"lng":33.173958},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (33.48333,-19.11639)","lat":-19.11639,"lng":33.48333},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (33.64619,-19.08684)","lat":-19.08684,"lng":33.64619},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (34.06977,-18.68532)","lat":-18.68532,"lng":34.06977},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (34.20811,-19.270105)","lat":-19.270105,"lng":34.20811},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (34.83889,-19.84361)","lat":-19.84361,"lng":34.83889},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (35.938618,-18.290625)","lat":-18.290625,"lng":35.938618},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (36.88833,-17.87861)","lat":-17.87861,"lng":36.88833},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (36.983612,-15.462386)","lat":-15.462386,"lng":36.983612},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (36.98559,-16.839096)","lat":-16.839096,"lng":36.98559},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (38.9981,-13.134)","lat":-13.134,"lng":38.9981},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (39.2666,-15.11646)","lat":-15.11646,"lng":39.2666},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (39.90861,-16.2325)","lat":-16.2325,"lng":39.90861},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (40.298595,-14.915417)","lat":-14.915417,"lng":40.298595},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (40.3522,-11.3536)","lat":-11.3536,"lng":40.3522},"timeSteps":1},{"dyn":{},"static":{"type":"polar-area","width":45,"height":30,"opacity":1,"labels":"auto","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (40.68538,-14.56257)","lat":-14.56257,"lng":40.68538},"timeSteps":1}],[[[78]],[[253]],[[21]],[[25]],[[4]],[[30]],[[7]],[[4]],[[61]],[[20]],[[25]],[[16]],[[15]],[[28]],[[13]],[[64]],[[7]],[[12]],[[2]],[[32]]],253,["#1f77b4","#ff7f0e","#2ca02c","#d62728","#9467bd","#8c564b","e377c2","#7f7f7f","#bcbd22","#17becf"],["1"],null,{"showTitle":true,"showValues":true,"labels":["Mulheres","Homens"],"supValues":null,"supLabels":[],"html":[["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Matola<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Maputo Cidade<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Manica<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Chokwe<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Catandica<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Chimoio<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Gondola<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Gorongosa<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Nhamatanda<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Beira<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Marromeu<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Quelimane<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Gurue<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Mocuba<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Montepuez<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Nampula<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Angoche<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Monapo<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Mocimboa da Praia<\/div>"],["<div><h4><b><span style='color: #7f0000';font-size: 8pt'>Distrito: <\/span><\/b>Nacala Porto<\/div>"]],"noPopup":false,"digits":null},null]}],"limits":{"lat":[-25.972,-11.3536],"lng":[32.45889,40.68538]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+<span style="color:#21618C ">Copyright &copy; 2019 Counterpart International. All Rights Reserved.</span>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
