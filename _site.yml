@@ -1,0 +1,67 @@
+name: "MONITOR"
+#output_dir: "."
+navbar:
+  title: "MONITOR"
+  left:
+    - text:  "Recenseamento"
+      menu:
+        - text: "Fase de Recenseamento"
+        - text: "Caracteristicas do Posto"
+          menu:
+            - text: "Localização do Posto"
+              href: page1a.html
+            - text: "Mulheres nas Brigadas"
+              href: page1b.html
+            - text: "Variação das Mulheres nas Brigadas"
+              href: page1c.html
+            - text: "Posto de Recenseamento"
+              href: page1d.html
+        - text: "--------------------------"
+        - text: "Material de Recenseamrnto"
+          href: page2.html
+        - text: "--------------------------"
+        - text: "Registo dos Eleitore"
+          href: page3.html
+        - text: "--------------------------"
+        - text: "Reclamações Apresentadas"
+          href: page4.html
+        - text: "--------------------------"
+        - text: "Cartões do Eleitor"
+          href: page5.html
+    - text:  "Campanha"
+      menu:
+        - text: "Campanha Eleitoral"
+          href: Campanha.html
+    - text:  "Abertura"
+      menu:
+        - text: "Abertura da Mesa de Votação"
+          href: C1_Abertura_da_mesa.html      
+    - text:  "Votação"
+      menu:
+        - text: "Dia de Votação"
+          href: C2_Votacao-Dia.html
+    - text:  "Encerramento"
+      menu:
+        - text: "Encerramento da Mesa de Votação"
+          href: C3_Encerramento.html      
+    - text:  "Apuramento"
+      menu:
+        - text: "Apuramento e Contagem dos Votos"
+          href: C4_Apuramento_e_Contagem.html
+        - text:  "Mapa com % de apuramento dos Candidatos e Partidos"
+          href: C4_Apuramento_Candidatos.html        
+    - text:  "Incidentes"
+      menu:
+        - text: "Incidentes de Violência"
+          href: F_Incidentes.html 
+      
+  right:
+    - icon: fa-envelope fa-lg
+      href: contact.html
+
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'
+    include:
+      after_body: footer.html
